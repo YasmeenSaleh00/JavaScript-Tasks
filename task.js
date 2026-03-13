@@ -440,4 +440,257 @@ document.write('<br>');
 document.write('Task 32');
 document.write('<br>');
 
+for(let i =1; i<=500; i++){
+    let digits =  i.toString().split(''); 
+    let sumOfDigits =0;
+    
+    for(let j =0; j< digits.length ;j++){
+        sumOfDigits += Number(digits[j]);
 
+    }
+    let isPrime = true;
+    if(sumOfDigits <=1){
+        
+        isPrime=false;
+    }else{
+        for(let k=2; k<= Math.sqrt(sumOfDigits);k++){
+            //بلشنا من 2 لانه تجصيل حاصل بقبل على واحد
+            if(sumOfDigits % k ===0){
+                isPrime=false;
+                break;
+            }
+           
+        }
+        
+    }
+    if(isPrime){
+        document.write(i + "   ")
+    }
+ 
+ }
+ document.write('<br>');
+
+ // Task 33
+//Write a program that prints numbers between 1 and 300 that contain exactly two digits equal to each other.
+document.write('Task 33');
+document.write('<br>');
+
+for(let i =1; i<=300; i++){
+    let digits =  i.toString().split(''); 
+    let count =0;
+       for (let j= 0; j<digits.length;j++){
+        for(let k=j+1; k<digits.length ;k++){
+            if(digits[j] === digits[k]){
+                count++;
+            }
+        }
+      
+        
+       }
+         if(count === 1){
+            document.write(i+ " ")
+        }
+ }
+
+document.write('<br>');
+// Task 34
+//Write a program that prints numbers between 1 and 200 where the reverse of the number is greater than the original number.
+document.write('Task 34');
+document.write('<br>');
+for(let i= 1; i<= 200;i++){
+    let reversedNumber = Number(i.toString().split("").reverse().join(""));
+     if(reversedNumber > i){
+          document.write(i+ " ")
+     }
+
+  
+}
+
+document.write('<br>');
+// Task 35
+//Write a program that prints numbers between 1 and 500 whose digit product is divisible by 5.
+document.write('Task 35');
+document.write('<br>');
+for(let i= 1; i<= 500;i++){
+    let digits = i.toString().split("");
+
+    let product = 1;
+    for(let j=0;j< digits.length;j++){
+      product *=Number( digits[j]);
+      
+    }
+    if(product % 5 ===0){
+        document.write(i+" ");
+       
+    }
+
+  
+}
+document.write('<br>');
+// Task 36
+//Write a program that prints numbers between 1 and 300 where the sum of digits equals the number of digits multiplied by 5.
+document.write('Task 36');
+document.write('<br>');
+
+for(let i= 1; i<= 300;i++){
+    let digits = i.toString().split("");
+    let sumOfDigits = 0;
+    for (let j = 0; j < digits.length; j++) {
+         sumOfDigits += Number(digits[j]);
+        
+    }
+if(sumOfDigits ===  5 * digits.length){
+    document.write(i+ " ")
+}
+  
+}
+document.write('<br>');
+// Task 37
+//Write a program that prints numbers between 1 and 500 whose reverse number is even.
+document.write('Task 37');
+document.write('<br>');
+
+for(let i= 1; i<= 500;i++){
+   
+let digits = i.toString().split("");
+    
+   
+    let firstDigit = Number(digits[0]);
+
+    
+    if (firstDigit % 2 === 0) {
+        document.write(i + " ");
+    }
+  
+}
+document.write('<br>');
+// Task 38
+//Write a program that prints numbers between 1 and 300 where the square of the last digit equals the first digit.
+document.write('Task 38');
+document.write('<br>');
+for(let i= 1; i<= 300;i++){
+   
+let digits = i.toString().split("");
+    
+   
+    let firstDigit = Number(digits[0]);
+   
+    let lastDigit = Number(Math.pow( digits[digits.length-1],2));
+   
+
+    
+    if (firstDigit == lastDigit) {
+        document.write(i + " ");
+    }
+  
+}
+document.write('<br>');
+// Task 39
+//Write a program that prints numbers between 1 and 500 whose digit sum is divisible by the number of digits.
+document.write('Task 39');
+document.write('<br>');
+for(let i= 1; i<= 500;i++){
+   
+let digits = i.toString().split("");
+let sumOfDigits=0;
+for(let j =0;j<digits.length;j++){
+   sumOfDigits+=Number(digits[j]);
+}
+if(sumOfDigits % digits.length===0){
+    document.write(i+ " ");
+}
+}
+document.write('<br>');
+// Task 40
+//Write a program that prints numbers between 1 and 1000 where the sum of digits equals 15.
+document.write('Task 40');
+document.write('<br>');
+for(let i= 1; i<= 1000;i++){
+   
+let digits = i.toString().split("");
+let sumOfDigits=0;
+for(let j =0;j<digits.length;j++){
+   sumOfDigits+=Number(digits[j]);
+}
+if(sumOfDigits === 15){
+    document.write(i+ " ");
+}
+}
+document.write('<br>');
+// Task 41
+//Write a program that prints numbers between 1 and 1000 whose digit sum equals their digit product.
+document.write('Task 41');
+document.write('<br>');
+
+ for(let i = 1; i<=1000;i++){
+let digits = i.toString().split("");
+ let sumOfDigits = 0;
+ let product = 1;
+for(let j =0;j<digits.length;j++){
+   sumOfDigits+=Number(digits[j]);
+   product *=Number(digits[j]);
+}
+if(sumOfDigits === product){
+    document.write(i+ " ");
+}
+ }
+ document.write('<br>');
+ // Task 42
+//Write a program that prints numbers between 1 and 1000 whose reverse equals the original number plus 9.
+document.write('Task 42');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+let digits =Number( i.toString().split("").reverse().join(""));
+
+ 
+
+if(digits ===  i+9){
+    document.write(i+ " ");
+}
+ }
+ document.write('<br>');
+  // Task 43
+//Write a program that prints numbers between 1 and 1000 whose square ends with the same number.
+document.write('Task 43');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+let square= Math.pow(i,2).toString().endsWith(i);
+if(square){
+    document.write(i+ " ")
+}
+ }
+ document.write('<br>');
+  // Task 44
+//Write a program that prints numbers between 1 and 1000 where the difference between the number and its reverse is divisible by 9.
+document.write('Task 44');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+let digits =Number( i.toString().split("").reverse().join(""));
+
+ let difference = Math.abs(Number(digits) - i);
+ 
+
+ 
+if(difference % 9 === 0){
+    document.write(i+ " ");
+}
+ }
+ document.write('<br>');
+ // Task 45
+//Write a program that prints numbers between 1 and 1000 where the sum of digits equals the reverse of the number of digits.
+document.write('Task 45');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+    
+
+let sumOfDigits=0;
+let digits =i.toString().split("").reverse();
+   for(let j=0;j<digits.length;j++){
+    sumOfDigits += Number(digits[j]);
+
+   }
+   if(sumOfDigits === Number (digits.join(''))){
+    document.write(i+" ")
+   }
+ }
+ document.write('<br>');
