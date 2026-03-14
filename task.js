@@ -45,7 +45,23 @@ document.write('<br>');
 document.write('Task 5');
 document.write('<br>');
 
-//code
+let letters = ['A', 'B', 'C', 'D', 'E'];
+
+for (let i = 0; i < letters.length; i++) { 
+    let rowOutput = "";
+    
+    for (let j = 0; j < 5; j++) {  
+        if (j >= 4 - i) {
+            rowOutput += letters[i] + " ";
+        } else {
+            rowOutput += "A ";
+        }
+    }
+    
+    document.write(rowOutput + "<br>");
+}
+
+
 document.write('<br>');
 
 //Task 6
@@ -53,14 +69,41 @@ document.write('<br>');
 document.write('Task 6');
 document.write('<br>');
 
-//code
+let numbers = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < numbers.length; i++) { 
+    let rowOutput = "";
+    
+    for (let j = 0; j < 5; j++) {  
+        if (j >= 4 - i) {
+            rowOutput += numbers[i] + " ";
+        } else {
+            rowOutput += 1;
+        }
+    }
+    
+    document.write(rowOutput + "<br>");
+}
 document.write('<br>');
 //Task 7
 //Create a script to generate the following pattern using nested for loops.
 document.write('Task 7');
 document.write('<br>');
+let numbersArr = [1, 2, 3, 4, 5];
 
-//code
+for (let i = 0; i < numbersArr.length; i++) { 
+    let rowOutput = "";
+    
+    for (let j = 0; j < 5; j++) {  
+        if (j == i) {
+            rowOutput += numbersArr[i] + " ";
+        } else {
+            rowOutput += 0;
+        }
+    }
+    
+    document.write(rowOutput + "<br>");
+}
 document.write('<br>');
 //Task 8
 //Write a program to calculate the factorial of a number using a for loop.
@@ -692,5 +735,98 @@ let digits =i.toString().split("").reverse();
    if(sumOfDigits === Number (digits.join(''))){
     document.write(i+" ")
    }
+ }
+ document.write('<br>');
+  // Task 46
+//Write a program that prints numbers between 1 and 1000 where the digit sum squared equals the number
+document.write('Task 46');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+    
+
+let sumOfDigits=0;
+let digits =i.toString().split("");
+   for(let j=0;j<digits.length;j++){
+    sumOfDigits += Number(digits[j]);
+
+   }
+   if(Math.pow(sumOfDigits,2)=== i){
+    document.write(i+" ")
+   }
+ }
+ document.write('<br>');
+   // Task 47
+//Write a program that prints numbers between 1 and 1000 where the sum of the cubes of the digits equals the number.
+document.write('Task 47');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+    
+
+let sumOfDigits=0;
+let digits =i.toString().split("");
+   for(let j=0;j<digits.length;j++){
+    sumOfDigits +=Math.pow(digits[j],3);
+
+   }
+   if(sumOfDigits=== i){
+    document.write(i+" ")
+   }
+ }
+ document.write('<br>');
+    // Task 48
+//Write a program that prints numbers between 1 and 1000 where the reverse number is a prime number.
+document.write('Task 48');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+
+let digits =Number( i.toString().split("").reverse().join(""));
+let isPrime=true;
+if(digits <= 1){
+    isPrime=false;
+}else{
+    for(let k=2; k<= Math.sqrt(digits);k++){
+            if(digits % k ===0){
+                isPrime=false;
+                break;
+            }
+}
+if(isPrime){
+    document.write(i + " ");
+}
+}
+ }
+ document.write('<br>');
+// Task 49
+//Write a program that prints numbers between 1 and 1000 where the product of digits equals the square of the digit sum.
+document.write('Task 49');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+    let digits = i.toString().split("");
+    let sumOfDigits = 0;
+    let product=1;
+    for(let k=0;k<digits.length;k++){
+        sumOfDigits+=Number(digits[k]);
+        product *=digits[k];
+
+    }
+    if(product === Math.pow(sumOfDigits,2)){
+        document.write(i+ "  ");
+    }
+
+ }
+ document.write('<br>');
+ // Task 50
+//Write a program that prints numbers between 1 and 1000 where the reverse of the number multiplied by the original number ends with 1.
+document.write('Task 50');
+document.write('<br>');
+ for(let i = 1; i<=1000;i++){
+    let digits =  i.toString().split("").reverse().join("");
+    console.log(digits)
+    
+    
+    if((digits * i ).toString().endsWith("1")){
+        document.write(i+ "  ");
+    }
+
  }
  document.write('<br>');
