@@ -77,8 +77,8 @@ document.write('<br>');
 document.write("Task 12");
 document.write('<br>');
 let f= "elephant";
-let matchArray = f.matchAll("e");
-document.write( f.matchAll("e"));
+let matches = Array.from(f.matchAll(/e/g));
+document.write( matches);
 document.write('<br>');
 //Palindrome Check
 document.write("Task 13");
@@ -115,14 +115,23 @@ document.write('<br>');
 document.write("Task 16");
 document.write('<br>');
 let mixed = "There are 3 apples and 2 oranges";
-let numbers = mixed.match(/\d+/g);
-document.write(numbers);
+let numbersOne = mixed.match(/\d+/g);
+//method two
+let numbersTwo= mixed.match(/[0-9]/g)
+document.write(numbersOne + "<br>");
+document.write(numbersTwo)
 document.write('<br>');
 //Check if the following string is a valid email format.
 document.write("Task 17");
 document.write('<br>');
 let email = "example@email.com";
-document.write(email.toLowerCase().endsWith("@email.com"));
+let emailPattern = /\w+@\w+\.(com|net|org)/ig;
+if(emailPattern.test(email)){
+    document.write("valid")
+}else{
+    document.write("not valid")
+}
+// document.write(email.toLowerCase().endsWith("@email.com"));
 document.write('<br>');
 //Replace the word "bad" with "good" in the sentence:
 document.write("Task 18");
