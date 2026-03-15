@@ -497,7 +497,6 @@ for(let i =1; i<=500; i++){
         isPrime=false;
     }else{
         for(let k=2; k<= Math.sqrt(sumOfDigits);k++){
-            //بلشنا من 2 لانه تجصيل حاصل بقبل على واحد
             if(sumOfDigits % k ===0){
                 isPrime=false;
                 break;
@@ -830,3 +829,10 @@ document.write('<br>');
 
  }
  document.write('<br>');
+ let user = {
+    theName  : "yasmeen",
+    theAge : 23,
+
+ };
+ console.log(user.theName);
+ console.log(user["theAge"]);
