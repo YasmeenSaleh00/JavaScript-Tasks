@@ -1,3 +1,4 @@
+document.write("<h1>String Manipulation Exercises</h1>");
 //Create two variables containing the strings `"Hello"` and `"World"`.
 // Write code that combines them into one string with a space between them.
 document.write("Task 1");
@@ -123,7 +124,7 @@ document.write('<br>');
 let email = "example@email.com";
 document.write(email.toLowerCase().endsWith("@email.com"));
 document.write('<br>');
-//Check if the following string is a valid email format.
+//Replace the word "bad" with "good" in the sentence:
 document.write("Task 18");
 document.write('<br>');
 let sentenceTwo="This is a bad word";
@@ -133,5 +134,121 @@ document.write('<br>');
 document.write("Task 19");
 document.write('<br>');
 let sentenceThree="aabbc";
-document.writeln(sentenceTwo);
+let sentenceThreeArray = [...new Set(sentenceThree)];
+document.writeln(sentenceThreeArray);
 document.write('<br>');
+//Sort the characters in the string "hello" alphabetically.
+document.write("Task 20");
+document.write('<br>');
+let word = "hello";
+document.write(word.split("").sort().join(""));
+document.write("<br>");
+//Check if the following two words are anagrams (contain the same letters).
+document.write("Task 21");
+document.write('<br>');
+let firstWord ="listen";
+let secondWord ="silent";
+if(firstWord.split("").sort().join("").toLowerCase()===secondWord.split("").sort().join("").toLowerCase()){
+    document.write("Yes Anagrams ");
+}else{
+     document.write("No Anagrams ");
+}
+document.write('<br>');
+//Reverse the order of words in the sentence but keep the letters of each word unchanged..
+document.write("Task 22");
+document.write('<br>');
+let firstText ="The quick brown fox";
+let reverseText = firstText.split(" ").reverse().join(" ");
+document.write(reverseText);
+document.write('<br>');
+//Find the longest word in the following sentence.
+document.write("Task 23");
+document.write('<br>');
+let longText = "Web development is fascinating";
+let longTextArray = longText.split(" ");
+let longestWord = longTextArray[0];
+for(let i = 0; i< longTextArray.length;i++){
+      if(longTextArray[i].length > longestWord.length){
+        longestWord = longTextArray[i];
+      }
+}
+document.write("The longest word is: " + longestWord);
+document.write('<br>');
+//Check if the sentence is a palindrome ignoring spaces, punctuation, and case.
+document.write("Task 24");
+document.write('<br>');
+let textThree = "A man, a plan, a canal, Panama!";
+let cleanText = textThree.toLowerCase().replace(/[\W_]/g, "");
+let reversedText = cleanText.split("").reverse().join("");
+
+
+if (cleanText === reversedText) {
+    document.write("Yes, it's a palindrome");
+} else {
+    document.write("No, it's not a palindrome");
+}
+document.write('<br>');
+//Return an object that counts how many times each character appears.
+document.write("Task 25");
+document.write('<br>');
+  let wordThree = "mississippi";
+        let frequency = {};
+        for (let i = 0; i < wordThree.length; i++) {
+            let char = wordThree[i];
+            if (frequency[char]) {
+                frequency[char]++;
+            } else {
+                frequency[char] = 1;
+            }
+        }
+        console.log(frequency);
+document.write("the answer in console");
+document.write("<br>");
+//Replace Vowels with Numbers
+// a = 1
+// e = 2
+// i = 3
+// o = 4
+// u = 5
+document.write("Task 26");
+document.write('<br>');
+let input ="Hello World";
+
+for(let i =0;i<input.length;i++){
+    if(input[i]==="a"){
+    input=    input.replaceAll("a",1);
+    }else if(input[i]==="e"){
+   input=input.replaceAll("e",2);
+    }else if(input[i]==="i"){
+   input=input.replaceAll("i",3);
+    }else if(input[i]==="o"){
+   input=input.replaceAll("o",4);
+    }else if(input[i]==="u"){
+   input=input.replaceAll("u",5);
+    }
+}
+document.write(input);
+document.write("<br>");
+//Check if the string "JavaScript is fun" starts with "Java".
+document.write("Task 27");
+document.write('<br>');
+let one = "JavaScript is fun";
+document.write(one.startsWith("Java"));
+document.write("<br>");
+//Check if the string "image.png" ends with "png".
+document.write("Task 28");
+document.write('<br>');
+let two = "image.png";
+document.write(two.endsWith("png"));
+document.write("<br>");
+//Repeat the string "ha" 3 times.
+document.write("Task 29");
+document.write('<br>');
+let three = "ha";
+document.write(three.repeat(3));
+document.write("<br>");
+//Find the position of the letter "o" in the string "Hello World".
+document.write("Task 30");
+document.write('<br>');
+let four ="Hello World";
+document.write(four.indexOf("o"));

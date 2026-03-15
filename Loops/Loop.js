@@ -1,3 +1,4 @@
+document.write("<h1>Loops Tasks</h1>");
 //Task 1
 // Create a script that displays numbers from **1 to 10** on one line separated by a dash **(-)**.
 // There should be **no dash at the beginning or end**.
