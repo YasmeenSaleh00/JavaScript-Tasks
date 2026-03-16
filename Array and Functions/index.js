@@ -323,11 +323,89 @@ return reversedArray;
 document.write(reverseWithoutReverse(numbers)); 
 document.write("<br>");
 document.write("<br>");
-//Reverse the array without using reverse().
+//The array contains numbers from 1 to N, but one number is missing.
 document.write("Task 26");
 document.write("<br>");
 let missdArray =[1,2,3,5,6];
 function findMissingNumber(arr){
-   
+ arr.sort((a, b) => a - b);
+ for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== i + 1) {
+      return i + 1;
+    }
+  }
+
+  return arr.length + 1;
 }
 document.write(findMissingNumber(missdArray)); 
+document.write("<br>");
+document.write("<br>");
+//TReturn two numbers that sum to target.
+document.write("Task 27");
+document.write("<br>");
+let array =[2,7,11,15];
+function pairSum(arr,target){
+for (let i = 0; i < arr.length; i++) {
+        for (let j = i+1; j < arr.length; j++) {
+      
+      if (arr[i] + arr[j] === target) {
+        return [arr[i], arr[j]]; 
+      }
+    }
+  }
+  return "No pair found"; 
+
+}
+document.write(pairSum(array,9)); 
+document.write("<br>");
+document.write("<br>");
+//Rotate the array to the right by N steps.
+document.write("Task 28");
+document.write("<br>");
+let array1 =[1,2,3,4,5];
+function rotateArray(arr,steps){
+
+  
+  let end = arr.slice(-steps);       
+  let start = arr.slice(0, -steps);  
+  
+  return end.concat(start);
+}
+document.write(rotateArray(array1,2)); 
+document.write("<br>");
+document.write("<br>");
+//Split the array into smaller arrays of size N.
+document.write("Task 29");
+document.write("<br>");
+let array2 =[1,2,3,4,5,6];
+function chunkArray(arr,size){
+    let result = []; 
+  for (let i = 0; i < arr.length; i += size) {
+    let chunk = arr.slice(i, i + size);
+    result.push(chunk);
+  }
+  console.log(result)
+
+  return result;
+}
+document.write(chunkArray(array2,2)); 
+document.write("<br>");
+document.write("<br>");
+//Group words by their length..
+document.write("Task 30");
+document.write("<br>");
+let array3 =["hi","cat","dog","apple"];
+function groupByLength(arr){
+ 
+  let result = {};
+  for(let i =0; i< arr.length;i++){
+let word = arr[i];
+    let len = word.length;
+    if (!result[len]) {
+      result[len] = [];
+    }
+    result[len].push(word);
+  }
+  console.log(result)
+return result;}
+document.write(groupByLength(array3)); 
