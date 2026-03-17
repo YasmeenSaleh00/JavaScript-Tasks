@@ -1,3 +1,4 @@
+console.log("----------------------Task 1-------------------");
 /*
  * Exercise 1
  *
@@ -13,8 +14,8 @@ function doubleNumbers(arr){
     let doubledArray =arr.map(x=>x*2);
    return doubledArray;
 }
-console.log("----------------------Task 1-------------------");
-  console.log(doubleNumbers([1,2,3]))
+  console.log(doubleNumbers([1,2,3]));
+  console.log("----------------------Task 2-------------------");
 /*
  * Exercise 2
  *
@@ -30,10 +31,10 @@ function numbersToStrings(arr){
   let stringedArray = arr.map(x=> x.toString());
   return stringedArray;
 }
-console.log("----------------------Task 2-------------------");
+
 console.log(numbersToStrings([1,2,3]));
 
-document.write("<br>");
+console.log("----------------------Task 3-------------------");
 /*
  * Exercise 3
  *
@@ -49,10 +50,10 @@ function upperCaseNames(arr){
    return arr.map(x=>x.toUpperCase());
    
 }
-console.log("----------------------Task 3-------------------");
+
 
  console.log(upperCaseNames(["ali","sara"]))
-document.write("<br>");
+console.log("----------------------Task 4-------------------");
 /*
  * Exercise 4
  *
@@ -68,9 +69,9 @@ function addFive(arr){
  let addArray =arr.map(x=>x+5);
    return addArray;
 };
-console.log("----------------------Task 4-------------------");
+
 console.log(addFive([10,20,30]))
-document.write("<br>");
+console.log("----------------------Task 5-------------------");
 /*
  * Exercise 5
  *
@@ -86,15 +87,14 @@ document.write("<br>");
  * ["Ali","Sara"]
 */
 function getNames(arr){
-   return arr.map(z=>z.name)
-}
-console.log("----------------------Task 5-------------------");
+   return arr.map(z=>z.name);
+};
 
 console.log(getNames([
   {name:"Ali",age:20},
   {name:"Sara",age:25} ]));
 
-  document.write("<br>");
+  console.log("----------------------Task 6-------------------");
   /*
  * Exercise 6
  *
@@ -109,8 +109,9 @@ console.log(getNames([
 function wordLengths(arr){
      return arr.map(z=>z.length);
 }
-console.log("----------------------Task 6-------------------");
  console.log(wordLengths(["apple","dog"]));
+ console.log("----------------------Task 7-------------------");
+
  /*
  * Exercise 7
  *
@@ -128,8 +129,8 @@ function valTimesIndex(arr){
     return element * index;
    })
 }
-console.log("----------------------Task 7-------------------");
  console.log(valTimesIndex([2,3,4]));
+console.log("----------------------Task 8-------------------");
 
 /*
  * Exercise 8
@@ -149,11 +150,12 @@ function makeUsernames(arr){
 
 return arr.map(x=>"@"+ x.username);
 }
-console.log("----------------------Task 8-------------------");
 console.log(makeUsernames([
   {username:"ahmad"},
  {username:"sara"}
   ]));
+  console.log("----------------------Task 9-------------------");
+
   /*
  * Exercise 9
  *
@@ -168,8 +170,9 @@ console.log(makeUsernames([
 function squareNumbers(arr){
    return arr.map(z=>Math.pow(z,2));
 }
-console.log("----------------------Task 9-------------------");
 console.log(squareNumbers([2,3,4]));
+console.log("----------------------Task 10-------------------");
+
 /*
  * Exercise 10
  *
@@ -182,10 +185,11 @@ console.log(squareNumbers([2,3,4]));
  * ["A","S"]
 */
 function firstLetters(arr){
- return   arr.map(w=>w[0]);
+ return   arr.map(w=>w.charAt(0));
 }
-console.log("----------------------Task 10-------------------");
 console.log(firstLetters(["Ali","Sara"]));
+console.log("----------------------Task 11-------------------");
+
 /*
  * Exercise 11
  *
@@ -198,13 +202,21 @@ console.log(firstLetters(["Ali","Sara"]));
  * 60
 */
 function sumNumbers(arr){
- return arr.reduce(function(acc,current){
-    return acc+current;
+   //with reduce
+//  return arr.reduce(function(acc,current){
+//     return acc+current;
 
-  },0);
+//   },0);
+//  with foreach
+ let sum=0;
+arr.forEach(x=>{
+  sum+=x;
+});
+return sum;
 }
-console.log("----------------------Task 11-------------------");
 console.log(sumNumbers([10,20,30]));
+console.log("----------------------Task 12-------------------");
+
 /*
  * Exercise 12
  *
@@ -219,8 +231,8 @@ console.log(sumNumbers([10,20,30]));
 function countEven(arr){
   return arr.filter(z=> z % 2===0).length;
   }
-console.log("----------------------Task 12-------------------");
 console.log(countEven([1,2,3,4]));
+console.log("----------------------Task 13-------------------");
 /*
  * Exercise 13
  *
@@ -235,8 +247,9 @@ console.log(countEven([1,2,3,4]));
 function timesTen(arr){
    return arr.map(z=>z*10);
 };
-console.log("----------------------Task 13-------------------");
 console.log(timesTen([1,2,3]));
+console.log("----------------------Task 14-------------------");
+
 /*
  * Exercise 14
  *
@@ -255,9 +268,21 @@ console.log(timesTen([1,2,3]));
  * ]
 */
 function addAdult(arr){
- 
+return arr.map(x=>{
+   if(x.age < 18){
+      x.adult=false;
+   }else{
+      x["adult"]=true;
+   }
+   return x;
+ })
 }
-console.log("----------------------Task 14-------------------");
+console.log(addAdult([
+  {name:"Ali",age:20},
+ {name:"Sara",age:15}
+  ]));
+console.log("----------------------Task 15-------------------");
+
 /*
  * Exercise 15
  *
@@ -272,8 +297,9 @@ console.log("----------------------Task 14-------------------");
 function addTax(arr){
  return arr.map(x=>x +10);
 }
-console.log("----------------------Task 15-------------------");
 console.log(addTax([100,200]));
+console.log("----------------------Task 16-------------------");
+
 /*
  * Exercise 16
  *
@@ -288,8 +314,9 @@ console.log(addTax([100,200]));
 function countBig(arr){
  return arr.filter(x=>x>50).length;
 }
-console.log("----------------------Task 16-------------------");
 console.log(countBig([20,60,80]));
+console.log("----------------------Task 17-------------------");
+
 /*
  * Exercise 17
  *
@@ -302,8 +329,11 @@ console.log(countBig([20,60,80]));
  * ["Number: 5","Number: 10"]
 */
 function labelNumbers(arr){
-   
+  return arr.map(x=>`Number: ${x} `);
 }
+console.log(labelNumbers([5,10]));
+console.log("----------------------Task 18-------------------");
+
 /*
  * Exercise 18
  *
@@ -319,14 +349,15 @@ function labelNumbers(arr){
  * ["Laptop","Phone"]
 */
 function productNames(arr){
- let array= arr.forEach(e=>console.log( e.product));
- return array;
+ 
+ return arr.map(e=>e.product);
 }
-console.log("----------------------Task 18-------------------");
- productNames([
- {product:"Laptop",price:1000},
- {product:"Phone",price:500}
- ]);
+console.log(productNames([
+  {product:"Laptop",price:1000},
+  {product:"Phone",price:500}
+  ]))
+ console.log("----------------------Task 19-------------------");
+
  /*
  * Exercise 19
  *
@@ -339,6 +370,31 @@ console.log("----------------------Task 18-------------------");
  * [5,6,7]
 */
 function addIndex(arr){
-   
+  return arr.map(function(ele,index){
+       return ele + index;
+   })
 }
+console.log(addIndex([5,5,5]))
+console.log("----------------------Task 20-------------------");
+/*
+ * Exercise 20
+ *
+ * Create array of boolean values (true if even)
+ *
+ * Test Case:
+ * console.log(isEvenArray([1,2,3,4]))
+ *
+ * Result:
+ * [false,true,false,true]
+*/
+function isEvenArray(arr){
+  return  arr.map(function(ele){
+      if(ele % 2===0){
+         return true;
+      }else{
+         return false;
+      }
+    });
 
+};
+console.log(isEvenArray([1,2,3,4]));
